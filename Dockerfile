@@ -1,5 +1,5 @@
-FROM php:7.2-apache
+FROM ubuntu:16.04
 RUN apt-get update
-ADD . /var/www/html
+RUN apt-get install -y apache2
+ADD website/* /var/www/html/
 ENTRYPOINT apachectl -D FOREGROUND
-
